@@ -92,8 +92,20 @@ test("constructor also takes parameter (values: number[]), which correspond to r
 
 });
 
+test("Both this.values and this.x, this.y are assignable to", () => {
+    const vec = new Vec3(1, 2, 3);
+
+    vec.values = [4, 5, 6];
+    expect(vec).toEqual(new Vec3(4, 5, 6));
+
+    vec.x = 7;
+    vec.y = 8;
+    vec.z = 9;
+    expect(vec).toEqual(new Vec3(7, 8, 9));
+});
+
 test("Vec3.Add(Vec3): Vec3 returns a new sum vector without modifying the originals.", () => {
-    const v1 = new Vec3(1, 2, 3);
+    const v1 = new Vec3(1,  2, 3);
     const v2 = new Vec3(3, -4, 0);
 
     const out1 = v1.Add(v2);

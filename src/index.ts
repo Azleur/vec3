@@ -16,6 +16,10 @@ export class Vec3 {
     get y(): number { return this.values[1]; }
     get z(): number { return this.values[2]; }
 
+    set x(val: number) { this.values[0] = val; }
+    set y(val: number) { this.values[1] = val; }
+    set z(val: number) { this.values[2] = val; }
+
     static get Zero(): Vec3 { return new Vec3( 0, 0, 0); }
     static get One (): Vec3 { return new Vec3( 1, 1, 1); }
 
